@@ -14,17 +14,19 @@ def flexCreator(dir):
     temp=f'.flex-{dir}'+'-evenly{display:flex;flex-direction:'+f'{dir}'+';justify-content:space-evenly;align-items:center;}\n'
     return temp
 
+#get current directory
+currDirectory=os.getcwd()
+offset="/src/"
+
 #Check if the directory is already created or not
-if not os.path.exists("./Components"):
-    os.mkdir("./Components") 
+if not os.path.exists(currDirectory+offset+"./Components"):
+    os.mkdir(currDirectory+offset+"./Components") 
 else:
     print("Directory already exist so! Overwriting everthing!")
 
-#get current directory
-currDirectory=os.getcwd()
 
 #create universal styling for everthing like common styling
-with open(currDirectory+"/uni.css","w") as nfuni:
+with open(currDirectory+offset+"/uni.css","w") as nfuni:
     UniSelector='*{padding:0px;margin:0px;box-sizing:border-box;}\n'
     BaseStyling='html{font-size:1rem;scroll-behavior:smooth;}\n'
     UniFlexClass=flexCreator("row")+flexCreator("column")
@@ -32,7 +34,8 @@ with open(currDirectory+"/uni.css","w") as nfuni:
     nfuni.write(UniStyling)
 
 #new directory update
-currDirectory=currDirectory+"/Components"
+currDirectory=currDirectory+offset+"Components"
+print(currDirectory)
 
 #create all the inputed files inside directory
 for fileName in fileNameList:
