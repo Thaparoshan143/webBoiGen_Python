@@ -34,8 +34,13 @@ with open(currDirectory+offset+"/uni.css","w") as nfuni:
     nfuni.write(UniStyling)
 
 #new directory update
+<<<<<<<< HEAD:ReactUtility/ReactboilerGenerator/ReactBoilerGenerator.py
 currDirectory=currDirectory+offset+"Components"
 print(currDirectory)
+========
+offset="/src/"
+currDirectory=currDirectory+offset+"Components"
+>>>>>>>> efd272ddf2ab792a4175a6b50ecebf486674881d:React Utility/ReactboilerGenerator/ReactBoilerGenerator.py
 
 #create all the inputed files inside directory
 for fileName in fileNameList:
