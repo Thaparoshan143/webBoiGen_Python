@@ -34,7 +34,6 @@ with open(currDirectory+offset+"/uni.css","w") as nfuni:
     nfuni.write(UniStyling)
 
 #new directory update
-currDirectory=currDirectory+offset+"Components"
 offset="/src/"
 currDirectory=currDirectory+offset+"Components"
 

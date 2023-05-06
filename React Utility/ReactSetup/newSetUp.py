@@ -14,19 +14,23 @@ currDir=os.getcwd()
 
 #remove the public files from above list
 for file in fileNamesPublic:
-    os.remove(currDir+"/public/"+file)
+    if os.path.exists(currDir+"/public/"+file):
+        os.remove(currDir+"/public/"+file)
 
 # remove file from src
 for file in fileNamesSrc:
-    os.remove(currDir+"/src/"+file)
+    if os.path.exists(currDir+"/src/"+file):
+        os.remove(currDir+"/src/"+file)
 
 # removing the content without removing file
 for file in fileNamesSrcEmpty:
-    with open(currDir+"/src/"+file,"w") as nf:
-        pass
+    if os.path.exists(currDir+"/src/"+file):
+        with open(currDir+"/src/"+file,"w") as nf:
+            pass
 
 # modifying the content for use
 for index,file in enumerate(fileNamesSrcJSModify):
-    with open(currDir+"/src/"+file,"w") as nf:
-        nf.write(modifyContent[index])
+    if os.path.exists(currDir+"/src/"+file):
+        with open(currDir+"/src/"+file,"w") as nf:
+            nf.write(modifyContent[index])
 
