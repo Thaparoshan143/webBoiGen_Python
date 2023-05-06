@@ -1,3 +1,20 @@
+
+How to use:
+1. Open the react project in Vscode (Open directory react created i.e react name directory)
+2. clone it in the same dir (i.e react project dir)
+3. if it is fresh new project
+    i. run the newSetUp.py
+    ii. run ReactBoilerGenerator for the known component creation (know more from below..)
+    iii. uni.css is imported for all file and have common styling (change if not required)
+
+If already existing project:
+- run newFileGenerator.py, write component name to create
+    i. js file and css will be created of respective name
+    ii. export default used and uni.css imported
+
+
+More Details:
+
 Here First Boiler Generator is for general/normal for creating using HTML, CSS, JS (plain) with file generated as:
 #weBoilerGenerator
     - index.HTML
