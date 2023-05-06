@@ -25,5 +25,13 @@ Boiler are generated based on input, user is given chance to input filename/comp
 Here ReactBoilerGenerator is mostly for the purpose of creating already though components at the start of projects
 and newFileGenerator can be used for creating new components on the way to add new ones with no worry with program running in background.
 
+#newSetUp:
+    specialy designed to serve the purpose of :
+    - remove the unnecessary files
+    - clear the content of few file
+    - modify the files for the required content
+
+all the file list are in the list, they are seperated by the folder and the way they are add, modify, erase ...
+
 #all the code base can be update as per required after downloading! 
 
