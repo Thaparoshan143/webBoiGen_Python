@@ -32,7 +32,8 @@ with open(currDirectory+"/uni.css","w") as nfuni:
     nfuni.write(UniStyling)
 
 #new directory update
-currDirectory=currDirectory+"/Components"
+offset="/src/"
+currDirectory=currDirectory+offset+"Components"
 
 #create all the inputed files inside directory
 for fileName in fileNameList:
