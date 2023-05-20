@@ -6,16 +6,13 @@ fileNameList=input().split()
 #we can create the boiler page template and read and write to other coreeseponding file as well
 def generateBoilerJS(title):
     importFile="import \"../"+f'uni.css'+"\"\n"+"import \"./"+f'{title}.css'+"\"\n\n"
-    new_boiler=importFile+f'function {title}()\n'+"{\n\treturn(\n\t\t"+ f'<div>{title}</div>\n'+"\t)\n}\n\n"+f'export default {title}'
+    new_boiler=importFile+f'function {title}()\n'+"{\n\treturn(\n\t\t"+ f'<div className="{title}">{title}</div>\n'+"\t)\n}\n\n"+f'export default {title}'
     return new_boiler
-
-#Styling flex string creater (for universal)
-def flexCreator(dir):
-    temp=f'.flex-{dir}'+'-evenly{display:flex;flex-direction:'+f'{dir}'+';justify-content:space-evenly;align-items:center;}\n'
-    return temp
 
 #get current directory
 currDirectory=os.getcwd()
+uniDirectory=os.getcwd()
+uniDirectory=uniDirectory+'/React Utility/uni.css'
 offset="/src/"
 
 #Check if the directory is already created or not
@@ -27,11 +24,9 @@ else:
 
 #create universal styling for everthing like common styling
 with open(currDirectory+offset+"/uni.css","w") as nfuni:
-    UniSelector='*{padding:0px;margin:0px;box-sizing:border-box;}\n'
-    BaseStyling='html{font-size:1rem;scroll-behavior:smooth;}\n'
-    UniFlexClass=flexCreator("row")+flexCreator("column")
-    UniStyling=UniSelector+BaseStyling+UniFlexClass
-    nfuni.write(UniStyling)
+    uniFile=open(uniDirectory,"r")
+    nfuni.write(uniFile.read())
+    uniFile.close()
 
 #new directory update
 offset="/src/"
