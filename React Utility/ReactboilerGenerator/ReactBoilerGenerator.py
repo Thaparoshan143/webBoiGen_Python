@@ -12,7 +12,7 @@ def generateBoilerJS(title):
 #get current directory
 currDirectory=os.getcwd()
 uniDirectory=os.getcwd()
-uniDirectory=uniDirectory+'/React Utility/uni.css'
+uniDirectory=uniDirectory+'/webBoiGen_Python/React Utility/uni.css'
 offset="/src/"
 
 #Check if the directory is already created or not
