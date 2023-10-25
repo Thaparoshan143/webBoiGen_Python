@@ -1,11 +1,16 @@
 import os
 
-def generateBoilerJS(title):
+def generateBoilerJSContent(title):
     importFile="import \"../"+f'uni.css'+"\"\n"+"import \"./"+f'{title}.css'+"\"\n\n"
     new_boiler=importFile+f'function {title}()\n'+"{\n\treturn(\n\t\t"+ f'<div>{title}</div>\n'+"\t)\n}\n\n"+f'export default {title}'
     return new_boiler
 
 offset="/src/"
+fileType = ".js"
+# fileType = ".tsx"
+
+# determines if we need to produce the styling file of same name i.e css file 
+includeStylingFile = True
 
 while True:
     fileName=input().split()
@@ -17,8 +22,9 @@ while True:
         break
 
     for file in fileName:
-        with open(currDir+offset+file+".js","w") as nfjs:
-            nfjs.write(generateBoilerJS(file))
-        with open(currDir+offset+file+".css","w") as nfcss:
-            pass
-        print(file+".js "+ "and "+file+".css "+"file Created!")
+        with open(currDir + offset + file + fileType, "w") as nfjs:
+            nfjs.write(generateBoilerJSContent(file))
+        if includeStylingFile:
+            with open(currDir + offset + file + ".css", "w") as nfcss:
+                pass
+        print(file + fileType + "and " + file + ".css " + "file Created!")
