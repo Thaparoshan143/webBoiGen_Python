@@ -4,9 +4,10 @@
 1. Open the react project in Vscode (Open directory react created i.e react name directory)
 2. clone it in the same dir (i.e react project dir)
 3. if it is fresh new project
-    i. run the newSetUp.py
-    ii. run ReactBoilerGenerator for the known component creation (know more from below..)
-    iii. uni.css is imported for all file and have common styling (change if not required)
+   <br><hr>
+   <ul><li> i. run the newSetUp.py </li>
+   <li> ii. run ReactBoilerGenerator for the known component creation (know more from below..)</li>
+   <li> iii. uni.css is imported for all file and have common styling (change if not required) </li></ul>
 
 <h3>If already existing project:</h3>
 <li> run newFileGenerator.py, write component name to create</li>
